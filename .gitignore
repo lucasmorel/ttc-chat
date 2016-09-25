@@ -35,3 +35,15 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Current project
+.idea
+bower_components
+
+# Project
+dist
+.tmp
+.sass-cache
+demo/config.js
+build
+.DS_Store
