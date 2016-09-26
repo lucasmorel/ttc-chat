@@ -28,6 +28,12 @@
                 {{page.name}}
             </h2>
 
+            <md-list-item ng-click="goTo(page.state)" ng-if="!page.isTitle">
+                <md-icon md-svg-src="material-design:{{page.icon}}"></md-icon>
+                <span>{{page.name}}</span>
+                <span flex></span>
+            </md-list-item>
+
             <div  ng-repeat="subPage in page.subPages">
 
                 <md-list-item ng-click="subPage.subPages ? subPage.isOpen = !subPage.isOpen : goTo(subPage.state)">

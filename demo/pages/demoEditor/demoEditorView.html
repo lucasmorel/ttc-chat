@@ -2,7 +2,7 @@
 
     <div ng-include="'pages/_templates/page_title.html'"></div>
 
-    <div class="demo-container" ng-if="!displayCode" md-scroll-y layout-sm="column" layout="row">
+    <div ng-if="!displayCode" md-scroll-y layout-sm="column" layout="row" layout-padding>
 
         <!-- _____ DEMO -->
         <div layout="column" flex>
@@ -41,14 +41,14 @@
                 </md-list-item>
             </md-list>
 
-            <h2 class="title" style="width:100%" ng-if="haveResult" ng-class="{'warn-font' : isError}">{{resultTitle}}</h2>
-            <json-formatter json="result" open="1" ng-if="haveResult"></json-formatter>
+            <h2 class="title" style="width:100%" ng-if="haveResult" ng-class="{'warn-font' : result.isError}">{{result.title}}</h2>
+            <json-formatter json="result.code" open="1" ng-if="haveResult"></json-formatter>
 
         </div>
     </div>
 
     <!-- _____ CODE -->
-    <md-content layout="column" flex ng-if="displayCode" md-scroll-y class="demo-container" ng-style="{'max-height':maxHeight}">
+    <md-content layout="column" flex ng-if="displayCode" md-scroll-y ng-style="{'max-height':maxHeight}" layout-padding>
         <div ng-include="'pages/_templates/page_code.html'"></div>
     </md-content>
     <!-- END -->

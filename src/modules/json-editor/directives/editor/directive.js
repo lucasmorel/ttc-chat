@@ -50,8 +50,8 @@ angular.module('eklabs.angularStarterPack.jsonEditor')
                  * @type {{onErrors: default_listeners.onErrors}}
                  */
                 var default_listeners = {
-                    onErrors : function(editorError){
-                        console.log(editorError);
+                    onError : function(editorError){
+                        //$log.error(editorError);
                     }
                 };
 
@@ -72,7 +72,7 @@ angular.module('eklabs.angularStarterPack.jsonEditor')
                  */
                 scope.$watch('editorError', function(errors){
                     if(errors){
-                        scope.listener.onErrors(errors);
+                        scope.listener.onError(errors);
                     }
                 });
 

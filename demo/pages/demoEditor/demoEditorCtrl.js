@@ -65,9 +65,14 @@ angular.module('demoApp')
 
         // --- Update result viewer
         var displayCode = function(from,code,isError){
+
             $scope.haveResult   = true;
-            $scope.result       = code;
-            $scope.isError      = isError;
+
+            $scope.result       = {
+                code : code,
+                isError : isError,
+                title : from
+            };
         };
         // ----------------------------------------------------------------------------------------------------
         // ---- DISPLAY CODE MODE
