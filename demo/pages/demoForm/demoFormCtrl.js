@@ -10,6 +10,8 @@ angular.module('demoApp')
         // ---- PARAMS CATALOGUE
         // ----------------------------------------------------------------------------------------------------
 
+        $scope.myUser = {id : "otot", name : "laurent"};
+
         $scope.params = [];
 
         $scope.chooseParams = function(index){
