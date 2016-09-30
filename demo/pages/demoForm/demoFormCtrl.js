@@ -15,20 +15,18 @@ angular.module('demoApp')
              * Default
              */
             case       : 'Default Case',
-            options    : undefined,
-            json       : undefined,
-            callback   : undefined,
-            listeners  : undefined
+            user       : undefined,
+
         },{
             /**
-             * Case JSON
+             * Case user
              */
-            case       : 'Case inject Json',
-            options    : undefined,
-            json       : {"hello" : "world"},
-            callback   : undefined,
-            listeners  : undefined
-
+            case       : 'Case user',
+            user    : {
+                firstname : 'toto',
+                lastname : 'plop',
+                titi : "pocvc"
+            }
         },{
             /**
              * Callback active
