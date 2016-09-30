@@ -3,7 +3,7 @@
 'use strict';
 
 angular.module('demoApp')
-    .controller('demoFormCtrl', function($scope){
+    .controller('demoFormCtrl', function($scope,$mdDialog){
 
 
         // ----------------------------------------------------------------------------------------------------
@@ -14,9 +14,9 @@ angular.module('demoApp')
             /**
              * Default
              */
-            case       : 'Default Case',
-            user       : undefined,
-
+            case        : 'Default Case',
+            user        : undefined,
+            callback    : undefined
         },{
             /**
              * Case user
@@ -26,32 +26,18 @@ angular.module('demoApp')
                 firstname : 'toto',
                 lastname : 'plop',
                 titi : "pocvc"
-            }
-        },{
-            /**
-             * Callback active
-             */
-            case       : 'Case Callback and Function',
-            options    : undefined,
-            json       : undefined,
-            callback   : {
-                valid : function(json){
-                    displayCode('Callback : valid',json);
-                }
             },
-            listeners  : {
-                onError : function(errors){
-                    displayCode('Listeners : onError',errors,true);
+            callback : {
+                onValid : function(user){
+                    displayCode('onValid', user)
                 }
             }
         }];
 
         $scope.chooseParams = function(index){
             // --- Define current status
-            $scope.myOptions    = $scope.params[index].options;
-            $scope.myJson       = $scope.params[index].json;
-            $scope.myCallback   = $scope.params[index].callback;
-            $scope.myListener   = $scope.params[index].listeners;
+            $scope.myUser    = $scope.params[index].user;
+            $scope.myCallback = $scope.params[index].callback;
 
             $scope.index          = index;
             $scope.refresh        = moment().valueOf();
