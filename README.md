@@ -1,4 +1,4 @@
-# eklabs.angularStarterPack 0.2.1
+# eklabs.angularStarterPack 0.2.2
 
 Starter pack to get basic on angular component development 
 
