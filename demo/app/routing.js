@@ -22,8 +22,8 @@ angular.module('demoApp')
             templateUrl : "pages/demoEditor/demoEditorView.html"
         })
 
-        .state('jsonderulo', {
-            url : '/jsonderulo',
+        .state('myForm', {
+            url : '/my-form',
             controller : 'demoFormCtrl',
             templateUrl : "pages/demoform/demoFormView.html"
         })
