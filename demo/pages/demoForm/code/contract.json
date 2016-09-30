@@ -2,6 +2,6 @@
   "user" : "Resource User",
 
   "callback"   : {
-    "onValid" : "function(user){}"
+    "onValid" : "  sdsfunction(user){}"
   }
 }
