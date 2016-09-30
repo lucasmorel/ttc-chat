@@ -1,6 +1,32 @@
 angular.module('eklabs.angularStarterPack').run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('eklabs.angularStarterPack/modules/forms/directives/my-form/myFormView.html',
+    "<form name=\"myForm\" ng-submit=\"actions.onValid(myUser)\">\n" +
+    "\n" +
+    "    <div layout=\"column\" >\n" +
+    "        <md-input-container >\n" +
+    "            <label>FirstName</label>\n" +
+    "            <input name=\"name\" ng-model=\"myUser.firstname\" />\n" +
+    "        </md-input-container>\n" +
+    "\n" +
+    "        <md-input-container >\n" +
+    "            <label>LastName</label>\n" +
+    "            <input name=\"name\" ng-model=\"myUser.lastname\" />\n" +
+    "        </md-input-container>\n" +
+    "    </div>\n" +
+    "\n" +
+    "\n" +
+    "    <md-button type=\"submit\">\n" +
+    "        <md-icon md-svg-src=\"material-design:done\"></md-icon>\n" +
+    "        Valider\n" +
+    "    </md-button>\n" +
+    "\n" +
+    "\n" +
+    "</form>"
+  );
+
+
   $templateCache.put('eklabs.angularStarterPack/modules/json-editor/directives/editor/view.html',
     "<form id        =   \"myJsonEditor\"\n" +
     "      name      =   \"myForm\"\n" +
