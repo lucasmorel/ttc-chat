@@ -3,9 +3,11 @@
   "description" : "Example of demo interface with a JSON Editor UI-ACE",
   "icon"        : "code",
   "state"       : "jsonEditor"
-},{
-  "name"        : "my Form",
-  "description" : "Demo live !!",
-  "icon"        : "bug_report",
-  "state"       : "myForm"
-}]
+},
+{
+  "name"        : "JSON derulo",
+  "description" : "Example of a JSON Editor UI-ACE",
+  "icon"        : "code",
+  "state"       : "jsonderulo"
+}
+]
