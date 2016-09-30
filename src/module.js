@@ -2,5 +2,5 @@
 
 angular.module('eklabs.angularStarterPack',[
     'eklabs.angularStarterPack.jsonEditor',
-    'eklabs.angularStarterPack.form'
+    'eklabs.angularStarterPack.forms'
 ]);

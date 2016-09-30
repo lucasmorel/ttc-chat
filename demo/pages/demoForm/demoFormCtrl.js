@@ -89,7 +89,7 @@ angular.module('demoApp')
          * @type {{title: string, icon: string, haveCodeSource: boolean}}
          */
         $scope.page         = {
-            title : 'directive jsonderulo',
+            title : 'directive my form',
             haveCodeSource : true,
             code : [{
                 link : 'pages/demoform/code/directive.html',
