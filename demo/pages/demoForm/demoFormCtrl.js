@@ -10,9 +10,43 @@ angular.module('demoApp')
         // ---- PARAMS CATALOGUE
         // ----------------------------------------------------------------------------------------------------
 
-        $scope.myUser = {id : "otot", name : "laurent"};
+        $scope.params = [{
+            /**
+             * Default
+             */
+            case       : 'Default Case',
+            options    : undefined,
+            json       : undefined,
+            callback   : undefined,
+            listeners  : undefined
+        },{
+            /**
+             * Case JSON
+             */
+            case       : 'Case inject Json',
+            options    : undefined,
+            json       : {"hello" : "world"},
+            callback   : undefined,
+            listeners  : undefined
 
-        $scope.params = [];
+        },{
+            /**
+             * Callback active
+             */
+            case       : 'Case Callback and Function',
+            options    : undefined,
+            json       : undefined,
+            callback   : {
+                valid : function(json){
+                    displayCode('Callback : valid',json);
+                }
+            },
+            listeners  : {
+                onError : function(errors){
+                    displayCode('Listeners : onError',errors,true);
+                }
+            }
+        }];
 
         $scope.chooseParams = function(index){
             // --- Define current status
@@ -27,8 +61,19 @@ angular.module('demoApp')
         };
 
         // --- Init
-        //$scope.chooseParams(0);
+        $scope.chooseParams(0);
 
+        // --- Update result viewer
+        var displayCode = function(from,code,isError){
+
+            $scope.haveResult   = true;
+
+            $scope.result       = {
+                code : code,
+                isError : isError,
+                title : from
+            };
+        };
         // ----------------------------------------------------------------------------------------------------
         // ---- DISPLAY CODE MODE
         // ----------------------------------------------------------------------------------------------------
@@ -44,16 +89,16 @@ angular.module('demoApp')
          * @type {{title: string, icon: string, haveCodeSource: boolean}}
          */
         $scope.page         = {
-            title : 'directive my form',
+            title : 'directive jsonderulo',
             haveCodeSource : true,
             code : [{
-                link : 'pages/demoForm/code/directive.html',
+                link : 'pages/demoform/code/directive.html',
                 language : 'html',
-                title : 'Code HTML de la directive demoForm'
+                title : 'Code HTML de la directive demo-json-editor'
             },{
-                link : 'pages/demoForm/code/contract.json',
+                link : 'pages/demoform/code/contract.json',
                 language : 'json',
-                title : 'Params available for the directive demoForm'
+                title : 'Params available for the directive demo-json-editor'
             }]
         };
 
