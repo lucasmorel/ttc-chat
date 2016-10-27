@@ -1,0 +1,178 @@
+<!--
+  This file is part of ThinkTwice.
+  
+  Copyright (c) 2016 Antoine Drouhin <antoine.drouhin@gmail.com>, Geoffrey Harrazi <geoffreyharrazi@gmail.com>, Annas Saker
+ 
+  For the full copyright and license information, please view the LICENSE
+  file that was distributed with this source code.
+ -->
+
+<!Doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      .profilPicture {
+        height: auto;
+        width: 35%;
+      }
+
+      .profileArea {
+        border: 5px black;
+        border-radius: 10px;
+      }
+
+      .chat {
+
+        list-style-type: none;
+      }
+      .chat li {
+        list-style: none;
+      }
+
+      .profileArea img{
+        float: left;
+      }
+
+      .profileArea ul {
+        margin-left: 35%;
+      }
+
+      .panel-heading {
+        background-color:  #da12b7!important;
+      }
+
+      .panel {
+        border-color: #da12b7;
+      }
+
+      .panel-body {
+        border-color: #da12b7;
+      }
+
+      .btn {
+        background-color: #da12b7!important;
+        color: white;
+        font-weight: 400;
+      }
+
+      #containerButton {
+        margin-bottom: 1%;
+      }
+
+      .you {
+        background : #e8e8e8;
+        padding : 5px;
+        border : 2px solid white;
+        text-align: right;
+      }
+
+      .me {
+        background : #fcdbf6;
+        padding : 5px;
+        border : 2px solid white;
+      }
+
+      #messages {
+        height : 200px;
+        overflow-y : scroll;
+      }
+                                                                                                                                                                                                      <link rel="stylesheet" href="../style/match.css" />
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-comment"></span> Chat
+          </div>
+          <div class="panel-body">
+            <ul class="chat" id="messages">
+
+            </ul>
+          </div>
+          <div class="panel-footer">
+            <div class="input-group">
+              <input id="btn-input" type="text" class="form-control input-sm" placeholder="Tapez votre mot doux ici..." />
+                  <span class="input-group-btn" id="msg-input">
+                      <button class="btn btn-sm" id="btn-chat">
+                          Envoyer votre mot doux</button>
+                  </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <!--<ul id="messages"></ul>-->
+    <!--<form action="">-->
+      <!--<input id="m" autocomplete="off" /><button>Send</button>-->
+    <!--</form>-->
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        var arr = document.location.search.replace("?","").split("&");
+        var param = arr[0].replace("token=","");
+        var user = arr[1].replace("user=","");
+
+        $.ajax({
+          method: "GET",
+          url: "http://localhost:9000/msg/" + param
+        })
+        .done(function( res ) {
+          for (var i = 0; i < res.length; i++) {
+            displayMsg(res[i].txt, res[i].personneid);
+          }
+        });
+
+
+        var socket = io();
+
+        socket.emit('create', param);
+
+        $('#btn-chat').click(function(){
+          var json = {
+            room: param,
+            val : $('#btn-input').val(),
+            user : user
+          }
+
+          socket.emit('chat message',json);
+
+
+          $('#btn-input').val('');
+          return false;
+        });
+
+
+        socket.on('chat message', function(msg){
+
+          displayMsg(msg.val, msg.user);
+        });
+
+        function displayMsg(msg, userid) {
+          var cls = user != userid ? "me" : "you";
+          $('#messages').append($('<li class="'+cls+'">').text(msg));
+          $("#messages").animate({ scrollTop: $('#messages').prop("scrollHeight")}, 1000);
+        };
+      });
+
+
+
+
+    </script>
+  </body>
+</html>

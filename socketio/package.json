@@ -1,0 +1,10 @@
+{
+  "name": "Thinktwice-chat",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "express": "4.10.2",
+    "mysql": "^2.11.1",
+    "socket.io": "1.2.0"
+  }
+}
