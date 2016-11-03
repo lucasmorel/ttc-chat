@@ -27,7 +27,11 @@ angular.module('demoApp')
             controller : 'demoFormCtrl',
             templateUrl : "pages/demoform/demoFormView.html"
         })
-
+        .state('myTchat', {
+            url : '/my-tchat',
+            controller : 'demoTchatCtrl',
+            templateUrl : "pages/demoTchat/demoTchatView.html"
+        })
 
     ;
 

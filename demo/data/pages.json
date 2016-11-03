@@ -9,5 +9,11 @@
   "description" : "Example how to use a form",
   "icon"        : "bug_report",
   "state"       : "myForm"
-}
+},
+  {
+    "name"        : "Tchat Example",
+    "description" : "Example how to use a tchat",
+    "icon"        : "bug_report",
+    "state"       : "myTchat"
+  }
 ]
