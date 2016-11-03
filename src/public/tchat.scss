@@ -1,0 +1,42 @@
+.chat {
+
+  list-style-type: none;
+}
+.chat li {
+  list-style: none;
+}
+.panel-heading {
+  background-color:  #da12b7!important;
+}
+
+.panel {
+  border-color: #da12b7;
+}
+
+.panel-body {
+  border-color: #da12b7;
+}
+
+.btn {
+  background-color: #da12b7!important;
+  color: white;
+  font-weight: 400;
+}
+
+.you {
+  background : #e8e8e8;
+  padding : 5px;
+  border : 2px solid white;
+  text-align: right;
+}
+
+.me {
+  background : #fcdbf6;
+  padding : 5px;
+  border : 2px solid white;
+}
+
+#messages {
+  height : 200px;
+  overflow-y : scroll;
+}
