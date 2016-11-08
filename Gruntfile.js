@@ -193,6 +193,11 @@ module.exports = function (grunt) {
                     ext : '.min.css'
                 }]
             }
+        },
+        karma : {
+            unit: {
+                configFile: 'test/karma.conf.js'
+            }
         }
     });
 
