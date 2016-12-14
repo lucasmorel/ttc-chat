@@ -6,10 +6,10 @@
   For the full copyright and license information, please view the LICENSE
   file that was distributed with this source code.
  -->
-<!--
+
 <link rel="stylesheet" href="tchat.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
--->
+
 <style>
     @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -334,23 +334,21 @@
 
 
     <div class="popup-box chat-popup" id="qnimate">
-        <div class="popup-head">
+        <!-- header à laisser afficher -->
+        <div class="popup-head" class="popup-box-on" >
             <div class="popup-head-left pull-left"><img src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" alt="iamgurdeeposahan"> Gurdeep Osahan</div>
             <div class="popup-head-right pull-right">
-
                 <button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>
             </div>
         </div>
-        <div class="popup-messages">
-
-
-
-
-            <div class="direct-chat-messages">
+        <div id="qnimate">
+            <div class="popup-messages">
+                <div class="direct-chat-messages">
+                </div>
             </div>
-        </div>
-        <div class="popup-messages-footer">
-            <textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
+            <div class="popup-messages-footer">
+                <textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
+            </div>
         </div>
     </div>
 <!--
