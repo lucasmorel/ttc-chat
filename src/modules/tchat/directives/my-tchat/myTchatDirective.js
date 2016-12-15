@@ -9,15 +9,15 @@ angular.module('eklabs.angularStarterPack.tchat')
         return {
             templateUrl : 'eklabs.angularStarterPack/modules/tchat/directives/my-tchat/myTchatView.html',
             scope : {
-                user        : '=',
+                urlSocket        : '=',
                 callback    : '=?'
             },link : function(scope){
 
                 /**
                  *
                  */
-                scope.$watch('user', function(myUser){
-                    scope.myUser = myUser;
+                scope.$watch('urlSocket', function(myUrlSocket){
+                    scope.myUrlSocket = myUrlSocket;
                 });
 
 
@@ -26,8 +26,8 @@ angular.module('eklabs.angularStarterPack.tchat')
                  * @type {{onValid: default_actions.onValid}}
                  */
                 var default_actions = {
-                    onValid : function(user){
-                        $log.info('my user is : ',user)
+                    onValid : function(urlSocket){
+                        $log.info('my socketApi is : ',urlSocket)
                     }
                 };
 

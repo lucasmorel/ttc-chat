@@ -1,7 +1,7 @@
 {
-  "user" : "Resource User",
+  "urlSocket" : "Resource urlSocketApi",
 
   "callback"   : {
-    "onValid" : "function(user){}"
+    "onValid" : "function(urlSocket){}"
   }
 }

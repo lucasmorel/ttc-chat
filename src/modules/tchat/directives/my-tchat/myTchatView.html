@@ -2,8 +2,18 @@
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 <link rel="stylesheet" href="tchat.css">
 
-<form name="myTchat" >
+<form name="myTchat" ng-submit="actions.onValid(myUrlSocket)">
 
+    <div layout="column">
+        <md-input-container >
+            <label>Saisir l'url de votre API</label>
+            <input name="urlSocket" ng-model="myUrlSocket.url" />
+        </md-input-container>
+        <md-button id="validate" type="submit">
+            <md-icon md-svg-src="material-design:done"></md-icon>
+            Valider
+        </md-button>
+    </div>
     <div class="popup-box chat-popup" id="qnimate"  style="background: white;">
         <!-- header à laisser afficher -->
         <div class="popup-head" id="removeClass">
@@ -16,6 +26,7 @@
                     <md-content style="background: white;">
                     <section>
                         <!--<md-subheader class="md-primary">Unread Messages</md-subheader> -->
+
                         <md-list layout-padding >
                             <md-list-item class="md-3-line" style="background: white;" ng-repeat="message in messages">
                                 <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
@@ -158,5 +169,7 @@
             $('#qnimate').removeClass('popup-box-on');
             $('#qnimate2').addClass('popup-box-on');
         });
+
+
     })
 </script>

@@ -15,28 +15,26 @@ angular.module('demoApp')
              * Default
              */
             case        : 'Default Case',
-            user        : undefined,
+            urlSocket        : undefined,
             callback    : undefined
         },{
             /**
-             * Case user
+             * Case urlSocket
              */
-            case       : 'Case user',
-            user    : {
-                firstname : 'toto',
-                lastname : 'plop',
-                titi : "pocvc"
+            case       : 'Case urlSocket',
+            urlSocket    : {
+                url : 'TEST'
             },
             callback : {
-                onValid : function(user){
-                    displayCode('onValid', user)
+                onValid : function(urlSocket){
+                    displayCode('onValid', urlSocket)
                 }
             }
         }];
 
         $scope.chooseParams = function(index){
             // --- Define current status
-            $scope.myUser    = $scope.params[index].user;
+            $scope.myUrlSocket    = $scope.params[index].urlSocket;
             $scope.myCallback = $scope.params[index].callback;
 
             $scope.index          = index;
