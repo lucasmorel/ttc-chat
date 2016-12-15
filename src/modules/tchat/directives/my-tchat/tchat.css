@@ -15,10 +15,11 @@
   bottom: 0;
   position: absolute;
   width: 100%;
-  padding: 2px 5px 10px 6px;
+  padding: 2px 5px 5px 6px;
 }
 
 .popup-box2 {
   height: 50px;
   margin-bottom: 0.5em;
 }
+

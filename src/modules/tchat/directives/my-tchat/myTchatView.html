@@ -33,17 +33,17 @@
                     </md-content>
                 </div>
             </div>
-            <div class="popup-messages-footer">
-                <div class="input-group">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <input id="status_message" placeholder="Entrez votre message" name="message">
-                    </md-input-container>
-                    <span class="input-group-btn" id="msg-input">
-                        <md-button class="md-fab" aria-label="Comment">
-                         <md-icon md-svg-src="material-design:comment"></md-icon>
-                        </md-button>
-                     </span>
-                </div>
+            <md-content class="popup-messages-footer">
+                <md-content>
+                    <form name="messageForm">
+                        <md-input-container class="md-block" flex="250" style="float:left;">
+                            <input id="status_message" placeholder="Entrez votre message" name="message">
+                        </md-input-container>
+                            <md-button style="float:right;" type="submit" class="md-fab" aria-label="Comment" >
+                             <md-icon md-svg-src="material-design:comment"></md-icon>
+                            </md-button>
+                    </form>
+                </md-content>
             </div>
     </div>
 
