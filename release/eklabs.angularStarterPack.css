@@ -3,3 +3,33 @@
   height: 400px;
   width: 500px;
 }
+
+/* line 2, ../../src/public/default.scss */
+.popup-box {
+  bottom: 0;
+  display: none;
+  height: 415px;
+  position: fixed;
+  right: 70px;
+  width: 300px;
+}
+
+/* line 10, ../../src/public/default.scss */
+.popup-box-on {
+  display: block !important;
+}
+
+/* line 14, ../../src/public/default.scss */
+.popup-messages-footer {
+  background: #fcfcfc none repeat scroll 0 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 2px 5px 5px 6px;
+}
+
+/* line 22, ../../src/public/default.scss */
+.popup-box2 {
+  height: 50px;
+  margin-bottom: 0.5em;
+}
