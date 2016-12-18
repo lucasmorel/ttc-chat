@@ -1,6 +1,31 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-<link rel="stylesheet" href="tchat.css">
+<style>
+    .popup-box {
+        bottom: 0;
+        display: none;
+        height: 415px;
+        position: fixed;
+        right: 70px;
+        width: 300px;
+    }
+    .popup-box-on {
+        display: block !important;
+    }
+
+    .popup-messages-footer {
+        background: #fcfcfc none repeat scroll 0 0;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        padding: 2px 5px 5px 6px;
+    }
+
+    .popup-box2 {
+        height: 50px;
+        margin-bottom: 0.5em;
+    }
+</style>
 
 <form name="myTchat" ng-submit="actions.onValid(myUrlSocket)">
 
@@ -43,17 +68,17 @@
                     </md-content>
                 </div>
             </div>
-            <div class="popup-messages-footer">
-                <div class="input-group">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <input id="status_message" placeholder="Entrez votre message" name="message">
-                    </md-input-container>
-                    <span class="input-group-btn" id="msg-input">
-                        <md-button class="md-fab" aria-label="Comment">
-                         <md-icon md-svg-src="material-design:comment"></md-icon>
-                        </md-button>
-                     </span>
-                </div>
+            <md-content class="popup-messages-footer">
+                <md-content>
+                    <form name="messageForm">
+                        <md-input-container class="md-block" flex="250" style="float:left;">
+                            <input id="status_message" placeholder="Entrez votre message" name="message">
+                        </md-input-container>
+                            <md-button style="float:right;" type="submit" class="md-fab" aria-label="Comment" >
+                             <md-icon md-svg-src="material-design:comment"></md-icon>
+                            </md-button>
+                    </form>
+                </md-content>
             </div>
     </div>
 
